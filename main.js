@@ -52,6 +52,8 @@ class RedLightGreenLightGame {
             
             if (text.toLowerCase().includes('red light')) {
                 this.endRedLightPhase();
+            } else if (text.toLowerCase().includes('green light')) {
+                this.endGreenLightPhase();
             }
         };
     }
@@ -259,6 +261,14 @@ class RedLightGreenLightGame {
                     this.lightIndicator.className = 'light-indicator';
                 }
             }, 2000);
+        }
+    }
+
+    endGreenLightPhase() {
+        if (this.gameState === 'green') {
+            this.gameState = 'playing';
+            this.lightIndicator.className = 'light-indicator';
+            this.gameStatus.textContent = 'Get ready for next command...';
         }
     }
 
