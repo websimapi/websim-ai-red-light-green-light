@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Red Light Green Light</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>🤖 AI Red Light Green Light</h1>
+            <div class="instructions">
+                <p>Start from the back of the room. Move during GREEN LIGHT, freeze during RED LIGHT!</p>
+                <p>Get close enough to press SPACEBAR to win!</p>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="video-container">
+                <video id="webcam" autoplay muted></video>
+                <canvas id="motionCanvas"></canvas>
+                <div class="game-overlay">
+                    <div id="gameStatus" class="status">Click Start to Play!</div>
+                    <div id="lightIndicator" class="light-indicator"></div>
+                    <div id="distanceBar" class="distance-bar">
+                        <div id="distanceProgress" class="distance-progress"></div>
+                        <div class="finish-line">🏁</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="start-btn">Start Game</button>
+            <button id="calibrateBtn" class="calibrate-btn">Calibrate Position</button>
+            <div class="ai-status">
+                <div id="aiSpeaking" class="ai-indicator">🤖 AI Ready</div>
+            </div>
+        </div>
+
+        <div class="debug-info">
+            <div>Motion Level: <span id="motionLevel">0</span></div>
+            <div>Distance: <span id="distanceDisplay">0%</span></div>
+            <div>Game State: <span id="gameState">idle</span></div>
+        </div>
+    </div>
+
+    <script src="audio.js"></script>
+    <script src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
