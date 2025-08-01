@@ -223,8 +223,8 @@ class RedLightGreenLightGame {
             
         await this.audioManager.speak(phrase);
         
-        // Schedule next round
-        const delay = Math.random() * 3000 + 2000; // 2-5 seconds
+        // Schedule next round with random interval between 1-7 seconds
+        const delay = Math.random() * 6000 + 1000; // 1-7 seconds
         setTimeout(() => this.gameLoop(), delay);
     }
 
@@ -315,4 +315,3 @@ class RedLightGreenLightGame {
 document.addEventListener('DOMContentLoaded', () => {
     new RedLightGreenLightGame();
 });
-
